@@ -1,0 +1,46 @@
+@include section_header("H Y P E R L I N K  _ S E C T I O N", "Adds colors to hyperlinks as well as accessible high-lighting");
+
+// Base settings
+a.c-hyperlink {
+  outline-style: none;
+  text-decoration: none;
+  &:visited, &:link {
+    outline-style: none;
+    text-decoration: none;
+    color: currentColor;
+  }
+  &:focus, &:hover, &:active{
+    text-decoration: underline;
+  }
+  &.x-hidden-focus{
+    background: 0 0!important;
+    text-decoration: none!important;
+    outline-color: transparent!important;
+  }
+}
+
+// The THEMES
+@mixin extraHyperlinkColor ($label, $baseColor){
+  @if ($label == null){
+    $label: "";
+  } @else {
+    $label: "."+$label;
+  }
+  a.c-hyperlink#{$label}{
+    &,&:visited, &:link {
+      color: $baseColor;
+    }
+    &:focus{
+      color: adjust-color($baseColor,$lightness: -10%);
+      background: content-box adjust-color($baseColor,$lightness: -5%, $alpha: -0.9%);
+    }
+    &:hover,&:active{
+      color: adjust-color($baseColor, $lightness: -10%);
+    }
+  }
+}
+
+@include extraHyperlinkColor(null,#0078D7); // Default
+@include extraHyperlinkColor(f-blue,#0078D7); // Default
+@include extraHyperlinkColor(f-pink,#FF009D);
+@include extraHyperlinkColor(f-magenta,#FF00DC);

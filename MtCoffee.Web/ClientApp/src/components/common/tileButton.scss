@@ -1,0 +1,93 @@
+@mixin tile-size($baseSize) {
+    &.f-s#{$baseSize} {
+        width: #{$baseSize}px;
+        height: #{math.div($baseSize * 2, 3)}px;
+        margin: 12px; // 16
+        border-radius: 1px;
+    }
+}
+
+@mixin tile-color($label,$baseFontColor: #000, $baseColor: rgba(0, 0, 0, .2), $hoverColor: null, $pressedColor: null){
+    @if $hoverColor == null {
+        $hoverColor: darken($baseColor,3.5);
+    }
+    @if $pressedColor == null {
+        $pressedColor: darken($baseColor,3.5);
+    }
+    
+    &.f-#{$label}{
+        color: $baseFontColor;
+        background-color: $baseColor;
+    }
+    &.f-#{$label}:focus,
+    &.f-#{$label}:hover {
+        background-color: $hoverColor;
+    }
+
+    &.f-#{$label}:active {
+        background-color: $pressedColor;
+        border-color: transparent;
+    }
+
+    &.f-#{$label}[disabled], &.f-#{$label}[aria-disabled=true] {
+        color: adjust-color($baseFontColor, $lightness: 10%);
+        background-color: adjust-color($baseColor, $lightness: 10%);
+        // border-color: transparent;
+        cursor: not-allowed;
+    }
+}
+
+.mt-tile-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content: center;
+}
+
+.mt-tile-button {
+    box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132), 0 0.6px 1.8px 0 rgba(0,0,0,.108);
+    border-radius: 4px;
+    padding: 4px;
+    background-color: white;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        opacity: 0.9;
+        border-color: currentColor;
+    }
+    
+    > .f-title {
+        text-align: center;
+    }
+
+    > .f-description {
+        text-align: center;
+        font-size: 11px;
+        margin-top: 4px;
+        font-weight: bolder;
+    }
+
+    &.f-border {
+        border: 3px solid black;
+    }
+    
+    @include tile-size(64);
+    @include tile-size(96);
+    @include tile-size(128);
+
+	@include tile-color('yellow',#000, #FFB900, #FDD835, #FBC02D);
+	@include tile-color('gray'	,#000, #CCCCCC, #B2B2B2, #999999);
+	@include tile-color('red'	,#FFF, #E81123, #c82333, #bd2130);
+	@include tile-color('red-muted'	,#FFF, #CE4457, #BC4052, #AF3D4E);
+	@include tile-color('teal'	,#FFF, #009FD4, #0082AD, #00799E);
+	@include tile-color('blue'	,#FFF, #0067B8, #005da6, #005293);
+	@include tile-color('purple',#FFF, #5D2E8F, #763AB6, #442268);
+    @include tile-color('green'	,#FFF, #00A611, #218838, #1e7e34);
+    
+	@include tile-color('orange',#000, #FFA726, #FB8C00 );
+}

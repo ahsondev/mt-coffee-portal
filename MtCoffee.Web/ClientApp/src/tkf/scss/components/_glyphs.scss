@@ -1,0 +1,64 @@
+@include section_header("G L Y P H S  _ S E C T I O N", "This section adds glyphicons to add visually pleasing icons to buttons and other page features.");
+$glyphs: (
+'arrow-right':'\E0AE',
+'arrow-left':'\E0D5',
+'arrow-up':'\E74A',
+'arrow-down':'\E74B',
+'play':'\E768',
+'pause':'\E769',
+'edit':'\E70F',
+'global-nav-button':'\E700',
+'plus':'\E710',
+'cancel':'\E711',
+'more':'\E712',
+'gear':'\E713',
+'mail':'\E715',
+'people':'\E716',
+'phone':'\E717',
+'filter':'\E71C',
+'zoom-in':'\E71E',
+'zoom-out':'\E71F',
+'microphone':'\E720',
+'search':'\E721',
+'camera':'\E722',
+'repeat':'\E72C',
+'star':'\E734',
+'star-solid':'\E735',
+'dash':'\E738', /* Skipped a few here */
+'delete':'\E74D',
+'mute':'\E74F',
+'volume':'\E767',
+'warn':'\E7BA',
+'warn-solid':'\E814',
+'world':'\E909',
+'heart':'\EB52',
+'accept':'\E8FB',
+'check-mark':'\E73E',
+'copy':'\E8C8',
+'download':'\E896',
+'full-screen':'\E740',
+'info':'\E946',
+'shopping-cart':'\E7BF',
+'chat-bubbles':'\E8F2',
+'chevron-right':'\E76C',
+'chevron-left':'\E76B',
+'chevron-up':'\E70E',
+'chevron-down':'\E70D'
+);
+
+@each $key,$val in $glyphs {
+    .c-glyph.glyph-#{$key}:not(.f-right):before { content: $val; }
+    .c-glyph.glyph-#{$key}.f-right:after { content: $val; }
+}
+.c-glyph{
+	&:after,&:before{
+		font-family: MWF-MDL2;
+		display: inline-block;
+	}
+	
+	&:after,&:before,
+	&:hover:after,
+	&:hover:before {
+		text-decoration: none;
+	}
+}

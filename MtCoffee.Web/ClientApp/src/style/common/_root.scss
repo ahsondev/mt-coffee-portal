@@ -1,0 +1,10 @@
+:root {
+    @each $name, $color in $colors {
+        --mt-color-#{$name}: #{$color};
+    }
+    
+    @each $name, $code in $icon-codes-map {
+        --mt-icon-code-#{$name}: #{$code};
+    }
+}
+  

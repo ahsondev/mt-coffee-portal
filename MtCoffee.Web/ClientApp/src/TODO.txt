@@ -1,0 +1,12 @@
+Fix bug:
+1. Add items to order page.
+2. Make item picker visible.
+3. Resize (reduce width)
+4. Make item picker invisible.
+Sometimes this will glitch the picker. We have to do a hack to fix it rn. But we should do it proper.
+
+Feature: When navigating away from orders page, SAVE the order so content is not lost.
+
+
+TODO: Fix number picker AMOUNT entry where the first key goes to the 10ths place.
+0.90 should be 0.09 at first key press.

@@ -1,0 +1,70 @@
+/* Provide sufficient contrast against white background */
+html, body { height: 100vh; }
+#root { 
+  
+  /* height: inherit; 
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:0;
+  margin:0; */
+}
+
+/* 
+@media only screen and (min-width: 1025px) {
+  #root {
+    max-width: 1024px;
+    width: 1024px;
+    max-height: 768px;
+    margin: auto;
+  }
+
+  #root::before {
+    display: block;
+    position: fixed;
+    width: 1024px;
+    height: 768px;
+    outline: 5px solid red;
+    content: '';
+    z-index: 987654;
+    outline-offset: -2px;
+    pointer-events: none;
+  }
+} */
+
+.mt-loading-panel {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  background: white;
+}
+
+.mt-loading-text {
+  max-width: 250px;
+  margin: auto;
+  position: relative;
+  top: 40%;
+  text-align: center;
+}
+
+.mt-loading-text > .f-title { 
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.mt-loading-text > .f-subtitle { 
+  font-size: 24px;
+  padding-top: 16px;
+}
+
+
+.mt-loading-text > .f-details {
+  padding-top: 16px;
+  color: #c235016b;
+  font-size: small;
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+}

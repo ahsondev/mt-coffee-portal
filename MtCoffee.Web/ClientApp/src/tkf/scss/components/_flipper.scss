@@ -1,0 +1,56 @@
+@include section_header("F L I P P E R  _ S E C T I O N", "");
+
+.c-flipper {
+    display: inline-block;
+    width: 24px;
+    height: 48px;
+    border: 0;
+    padding: 0;
+    background: #ccc;
+    color: #333;
+    font-family: MWF-MDL2;
+    opacity: .8;
+	
+	&:before {
+		position: relative;
+		left: 0;
+		top: 0
+	}
+	
+	&:focus {
+		outline: #000 $focus-outline-style-buttons;
+		background: rgba(0, 0, 0, .2)
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&:active {
+		background: #b3b3b3;
+		color: #000;
+	}
+	&.f-large {
+		width: 48px;
+		height: 96px
+	}
+
+	&.f-large:before {
+		font-size: 24px;
+		line-height: 28px
+	}
+
+	&.f-next:before,
+	&.f-right:before {
+		content: "";
+	}
+	
+	&.f-left:before,
+	&.f-previous:before {
+		content: "";
+	}
+	
+	&:focus:before {
+		font-weight:bold;
+	}
+}

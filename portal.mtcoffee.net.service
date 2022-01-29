@@ -1,0 +1,22 @@
+# Install to /etc/systemd/system/portal.mtcoffee.net.service
+[Unit]
+Description=Start and stop the MtCoffee portal website.
+#
+[Service]
+WorkingDirectory=/var/www/vhosts/mtcoffee.net/portal.mtcoffee.net
+ExecStart=/var/www/vhosts/mtcoffee.net/portal.mtcoffee.net/MtCoffee.Web
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dotnet-mtcoffee-portal
+User=mtcoffee
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+Environment=PORTAL_MTCOFFEE_NET_PW=YourPasswordHere
+# Environment=DOTNET_BUNDLE_EXTRACT_BASE_DIR=.extract/
+# If you need to run multiple services on different ports set
+# the ports environment variable here:
+# Environment=ASPNETCORE_URLS=http://localhost:6000
+[Install]
+WantedBy=multi-user.target

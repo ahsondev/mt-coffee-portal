@@ -1,0 +1,61 @@
+.mt-lineItem-customizer {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+
+  @include small-screen {
+    flex-direction: column;
+  }
+
+  .cc-col-finished {
+    flex-basis: 120px;
+    width: 120px;
+    position: relative;
+
+    @include small-screen {
+      padding-top: 16px;
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+
+  .cc-col-variants {
+    flex-basis: 240px;
+    width: 240px;
+    background: rgba(0,0,0,0.04);
+    position: relative;
+
+    @include small-screen {
+      padding-top: 16px;
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+
+  .cc-col-options {
+    flex: 1 1;
+    background: rgba(0,0,0,0.07);
+    position: relative;
+
+    @include small-screen {
+      padding-top: 16px;
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+
+  .cc-col-label {
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
+
+    @include small-screen {
+      right: 8px;
+      top: 4px;
+      bottom: unset;
+      left: unset;
+    }
+  }
+}

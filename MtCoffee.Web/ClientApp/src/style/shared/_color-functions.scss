@@ -1,0 +1,87 @@
+@use 'sass:math';
+//////////////////////////////
+// Exponent
+//////////////////////////////
+@function exponent($base, $exponent) {
+  // reset value
+  $value: $base;
+  // positive intergers get multiplied
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base; } }
+  // negitive intergers get divided. A number divided by itself is 1
+  @if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: math.div($value, $base); } }
+  // return the last value written
+  @return $value; 
+}
+
+@function luminosity($color){ 
+    // Thanks voxpelli for a very concise implementation of luminance measure in sass
+    // Adapted from: https://gist.github.com/voxpelli/6304812
+    $rgba: red($color), green($color), blue($color);
+    $rgba2: ();
+    @for $i from 1 through 3 { 
+		$rgb: math.div(nth($rgba, $i), 255);
+		@if($rgb < .03928){
+			$rgb:  math.div($rgb, 12.92);
+		} @else {
+			$rgbBase: math.div($rgb + .055, 1.055);
+			$rgb: exponent($rgbBase,2);
+			$rgb: $rgb + $rgb*$rgb*0.4;
+			//$rgb: pow($rgb, 2.4);
+		}
+		$rgba2: append($rgba2, $rgb);
+    }
+    @return (.2126 * nth($rgba2, 1) + .7152 * nth($rgba2, 2) + 0.0722 * nth($rgba2, 3))*100;
+  }
+
+@function contrast_ratio($color1, $color2) {
+    $luma1: luminosity($color1) + 5;
+    $luma2: luminosity($color2) + 5;
+    $ratio: math.div($luma1, $luma2); 
+    @if $luma1 < $luma2 {
+      $ratio: math.div(1, $ratio);
+    }
+    @return $ratio;
+}
+
+@function isAccessibleColorContrast($cA, $cB, $fontSizeInPixels: 16){
+	$contrast: contrast_ratio($cA, $cB);
+	
+	// WCAG AAA for normal text.
+	@if ($contrast > 7){
+		@return true;
+	}
+	
+	// WCAG AAA for large text (24px), AA for small text.
+	@if ($contrast > 4.5){
+		@return true;
+	}
+	
+	// WCAG AA for large text (24px))
+	@if ($contrast > 3){
+		@return $fontSizeInPixels >= 24;
+	}
+	
+	@return false;
+}
+
+// Returns a CONTRASTING color. 
+// So dark blue returns white. 
+// Light blue returns black.
+@function contrasting-color($color) {
+	$color-lightness: abs(lightness($color));
+	@if ($color-lightness > 50){
+		@if (isAccessibleColorContrast($color, black, 16) == false){
+			@error "Contrast is not enough: #{$color}, black";
+		}
+		@return black;
+	} @else {
+		@if (isAccessibleColorContrast($color, white, 16) == false){
+			@error "Contrast is not enough: #{$color}, white";
+		}
+		@return white;
+	}
+}

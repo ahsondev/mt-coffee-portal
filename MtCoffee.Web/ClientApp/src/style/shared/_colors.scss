@@ -1,0 +1,52 @@
+$colors-base: (
+  font: #000,
+  font-secondary: #707070,
+  font-contrast: #fff,
+  font-discount: #FF9595,
+  background: #faf9f8,
+  background-darker: #e6e6e6,
+  background-lighter: #ffffff,
+  background-dark-shade: rgba(0, 0, 0, 0.3),
+  background-darker-2: #ebeae8,
+  background-darker-3: #ebeae8,
+  card-table-header: #cccccc,
+  gray-table-cell: #605e5c,
+  // background-darker-3: #d2d2d2,
+  // background-secondary: #f5f5f5,
+  border: #dddddd, /* #dadde1, */
+  border-secondary: #cccccc,
+  
+  primary: #0078d4, /* #0078d4 */
+  font-disabled: #a19f9d,
+);
+
+// For charts with several entries.
+$colors-primary-shades: ();
+
+$light-max: 9;
+$dark-max: 15;
+$tone-step: 5;
+$shade-base: map-get($colors-base, primary);
+
+@for $i from 0 through $light-max {
+  $colors-primary-shades: map-merge($colors-primary-shades, (primary-shade-#{$i}: lighten($shade-base, $i * $tone-step)));
+}
+
+@for $i from ($light-max + 1) through $dark-max {
+  $colors-primary-shades: map-merge($colors-primary-shades, (primary-shade-#{$i}: darken($shade-base, ($i - $light-max) * $tone-step)));
+}
+
+$colors: map-merge($colors-base, $colors-primary-shades);
+
+@function get-color($name, $literal: false) {
+  @if map-has-key($colors, $name) == false {
+    @error "ERROR: Specified index does not exist in the mapping";
+  }   
+
+  @if $literal == true {
+    @return map-get($colors, $name);
+  }
+  @else {
+    @return var(--mt-color-#{$name});
+  }
+}

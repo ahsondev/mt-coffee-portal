@@ -1,0 +1,296 @@
+// TODO: FIX VFI
+// TODO: Fix wonky card mode with title/content going under each other
+// TODO: Selector in mobile should be to left. All else, indent.
+.cc-checkbox-td {
+  width: 25px;
+  cursor: pointer;
+}
+
+
+$cell-padding: 7px 10px;
+
+/* #region Common for cells */
+$text-alignments: center, end, start;
+$cell-alignments: (
+  center: center,
+  end: flex-end,
+  start: flex-start
+);
+
+@each $alignment in $text-alignments {
+  .c-cardTable-textalign-#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
+@each $alignment, $value in $cell-alignments {
+  .c-cardTable-cellalign-#{$alignment} {
+    justify-content: $value;
+    text-align: $alignment;
+  }
+}
+
+.c-cardTable-text-clip {
+  @include clip-text;
+}
+/* #endregion */
+
+/* #region Table container */
+.c-cardTable-container {
+  display: block;
+}
+/* #endregion */
+
+/* #region Table controls */
+.c-cardTable-filter {
+  display: block;
+}
+/* Filter bar and button go here */
+/* #endregion */
+
+/* #region Table */
+.c-cardTable {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  width: 100%;
+}
+/* #endregion */
+
+/* #region Header */
+.c-cardTable-header {
+  font-weight: 600;
+  margin: 0;
+  padding: $cell-padding;
+
+  @include kb-focus {
+    outline: 2px dashed currentColor;
+    outline-offset: -1px;
+  }
+}
+
+.c-cardTable-header-sortable {
+  cursor: pointer;
+
+  &:hover {
+    background: get-color(background-darker-2);
+  }
+
+  &:hover .c-cardTable-header-sorticon {
+    visibility: visible;
+  }
+}
+
+.c-cardTable-header-sortable-cell {
+  display: flex;
+  align-items: center;
+}
+
+.c-cardTable-header-sorticon {
+  margin-left: 5px;
+
+  &.hidden {
+    visibility: hidden;
+  }
+}
+
+.cc-sticky-table-header .c-cardTable-header {
+  background: get-color(card-table-header);
+  position: sticky;
+  top: 0;
+  border-color: darken(get-color(card-table-header, true), 20%);
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+
+  &:last-child {
+    border-right: 1px solid;
+  }
+  &:first-child {
+    border-left: 1px solid;
+  }
+}
+
+/* #endregion */
+
+/* #region Rows */
+.c-cardTable-row {
+  margin: 0;
+  border-left: 3px solid transparent;
+  max-width: 100%;
+  position: relative;
+
+  &.c-cardTable-borders {
+    border-bottom: 1px solid get-color(border);
+  }
+
+  @include kb-focus {
+    outline: 2px dashed currentColor;
+    outline-offset: -1px;
+  }
+}
+
+tbody > .c-cardTable-row-selectable:hover,
+tbody > .c-cardTable-row-selectable:focus,
+tbody > .c-cardTable-row-selectable:focus-within,
+tbody > .c-cardTable-row-active {
+  background-color: get-color(background-lighter);
+  border-left: 3px solid get-color(primary);
+//   box-shadow: $box-shadow-selected-item-neutral;
+//   z-index: $zindex-table-active;
+}
+/* #endregion */
+
+/* #region Cells */
+.c-cardTable-cell {
+  overflow: hidden;
+}
+
+.c-cardTable-td {
+  padding: $cell-padding;
+  height: 100%; // For Edge classic
+}
+
+.c-cardTable-row-header {
+  display: none;
+}
+/* #endregion */
+
+/* #region multiselect */
+.c-cardTable-selection {
+  font-size: 14px;
+  height: 14px;
+  position: relative;
+  // opacity: 0;
+  width: 14px;
+}
+
+.ms-Fabric--isFocusVisible .c-cardTable-selection:focus {
+  outline: $outline-thickness $outline-style currentColor;
+  outline-offset: 2px;
+}
+
+thead > .c-cardTable-row-selectable:hover > .c-cardTable-header > .c-cardTable-selection {
+  opacity: 1;
+}
+
+thead > .c-cardTable-row-selectable > .c-cardTable-header:focus-within {
+  outline: get-color(gray-table-cell) 1px solid;
+}
+
+tbody > .c-cardTable-row-selectable:hover > .c-cardTable-td > .c-cardTable-selection {
+  opacity: 1;
+}
+
+tbody > .c-cardTable-row-selectable:focus-within > .c-cardTable-td > .c-cardTable-selection {
+  opacity: 1;
+}
+
+.c-cardTable-row-checked {
+  opacity: 1;
+}
+
+.c-cardTable-checked {
+  color: var(--mr-color-primary);
+  cursor: default;
+  font-size: 14px;
+  height: 14px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 14px;
+}
+
+.c-cardTable-circle-no-checked {
+  color: get-color(font-secondary);
+  font-size: 14px;
+  height: 14px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 14px;
+
+  &:before {
+    color: get-color(primary);
+  }
+}
+
+.c-cardTable-mark-no-checked {
+  color: get-color(font-secondary);
+  cursor: default;
+  font-size: 12px;
+  height: 14px;
+  left: 1px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 14px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.c-cardTable {
+  @include all-screens {
+    width: 100%;
+
+    > thead {
+      @include acc-hide;
+    }
+        
+    .c-cardTable-row {
+      border-bottom: 0;
+      display: flex;
+      flex-flow: column nowrap;
+      background: get-color(background-lighter);
+      margin: 0 5px 15px 5px;
+      box-shadow: $box-shadow-card;
+      // max-width: calc(100vw - 130px);
+      padding: 10px 5px;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    tbody > .c-cardTable-row-active {
+        cursor: pointer;
+    }
+    
+    .c-cardTable-cell {
+      flex: 1 1 auto;
+      padding: $cell-padding;
+      text-align: start;
+    }
+
+    .c-cardTable-td {
+      display: flex;
+      flex-flow: row nowrap;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .c-cardTable-row-header {
+      display: inline-block;
+      font-weight: 600;
+      padding: $cell-padding;
+      flex: 0 0 auto;
+    }
+
+    .c-cardTable-td.cc-checkbox-td {
+      margin-left: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 30px;
+      width: 30px;
+
+      .c-cardTable-selection {
+        left: -13px;
+        margin: auto; // center vertically
+      }
+    }
+  }
+}
+
+/* #endregion */

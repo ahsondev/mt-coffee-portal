@@ -1,0 +1,17 @@
+@include section_header("D A T A _ J S _ H R E F", "Stylings for [data-js-href] tag components]");
+
+[data-js-href]:hover {
+  cursor: pointer;
+
+  img {
+    opacity: 0.9;
+  }
+  
+  a.f-href-target {
+    text-decoration: underline;
+  }
+  
+  h2 {
+    text-decoration: underline;
+  }
+} 

@@ -1,0 +1,55 @@
+.c-text-area {
+  width: 100%;
+  resize: vertical;
+  display: block;
+  width: 276px;
+  min-height: 36px;
+  margin-top: 20px;
+  padding: 7px 0;
+  text-indent: 10px;
+  border: 1px solid rgba(0, 0, 0, .6);
+  outline: 0;
+  background: #FFF;
+
+  &.f-inline {
+    display: inline-block;
+  }
+
+  &.f-flex {
+    width: 100%;
+    max-width: 100%;
+    min-width: 88px;
+  }
+
+  &.f-small {
+    width: 88px;
+  }
+
+  &:hover {
+    border-color: rgba(180, 128, 128, 0.8);
+  }
+
+  &:hover, &:focus {
+    border-color: #0078D7;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, .2);
+    border-color: rgba(0, 0, 0, .2)
+  }
+
+  &[readonly]{
+    border-color: rgba(0, 0, 0, .6);
+    background: #e6e6e6;
+  }
+
+  &.f-line-style {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .6);
+  }
+
+  + [class*=c-paragraph] {
+    padding-top: 24px;
+  }
+}

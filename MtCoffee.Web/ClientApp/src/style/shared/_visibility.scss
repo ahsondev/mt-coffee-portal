@@ -1,0 +1,55 @@
+@mixin acc-hide {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  width: 0;
+  height: 0;
+}
+
+@mixin clip-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin kb-focus {
+  $classes: #{&};
+  @at-root .x-focus-visible {
+    #{$classes} {
+      &:focus {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin all-screens {
+  &.x-break-extra-small {
+    @media only screen and (max-width: $break-extra-small-screen) { @content; }
+  }
+  &.x-break-small {
+    @media only screen and (max-width: $break-small-screen) { @content; }
+  }
+  &.x-break-medium {
+    @media only screen and (max-width: $break-medium-screen) { @content; }
+  }
+  &.x-break-large {
+    @media only screen and (min-width: $break-large-screen) { @content; }
+  }
+}
+
+@mixin extra-small-screen {
+  @media only screen and (max-width: $break-extra-small-screen) { @content; }
+}
+
+@mixin small-screen {
+  @media only screen and (max-width: $break-small-screen) { @content; }
+}
+
+@mixin medium-screen {
+  @media only screen and (max-width: $break-medium-screen) { @content; }
+}
+
+@mixin large-screen {
+  @media only screen and (min-width: $break-large-screen) { @content; }
+}

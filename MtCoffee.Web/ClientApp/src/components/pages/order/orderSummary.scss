@@ -1,0 +1,104 @@
+$order-summary-width: 250px;
+$order-summary-width-md: 170px;
+$order-summary-width-sm: 100%;
+
+.f-order-summary-section {
+    width: $order-summary-width;
+    flex-basis: $order-summary-width;
+    height: inherit;
+    display: flex;
+
+    @include medium-screen {
+        width: $order-summary-width-md;
+        flex-basis: $order-summary-width-md;
+    }
+
+    @include small-screen {
+        flex-basis: 100%;
+        width: 100%;
+        order: 1;
+
+        .mt-order-summary {
+            width: 100%;
+            margin: 5px;
+        }
+    }
+}
+
+.c-numberPicker button{
+    background: transparent !important;
+    color: unset !important;
+}
+
+.mt-order-summary {
+    width: 100%;
+    height: inherit;
+    background-color: #46454B;
+    color: #FFFFFF;
+    position: relative;
+
+    .cc-order-summary-buttons {
+        position: absolute;
+        bottom: 0;
+
+        > .c-button:before { display: none; }
+        > .c-button > span { display: inline; }
+
+        @include medium-screen {
+            > .c-button:before { display: inline; }
+            > .c-button > span { display: none; }
+        }
+
+        @include small-screen {
+            > .c-button:before { display: none; }
+            > .c-button > span { display: inline; }
+        }
+        
+        
+        .c-button {
+            margin: 0;
+            border: 1px solid #46454b;
+            font-size: x-large;
+            box-shadow: none;
+            outline-offset: -3px;
+            outline-style: dashed;
+        }
+        .c-button:last-of-type {
+            min-width: 60px;
+            width: 60px;
+            flex-basis: 60px;
+        }
+        .c-button:not(:last-of-type) {
+            flex: 1 1;
+        }
+    }
+
+    .f-row {
+        font-size: 15px;
+        line-height: 18px;
+        background-color: inherit;
+        color: inherit;
+        display: flex;
+        justify-content: space-between;
+
+        .f-col-left, .f-col-right {
+            display: inline-flex;
+            border-bottom: 2px solid #555;
+            padding-top: 20px;
+            padding-bottom: 15px;
+        }
+
+        .f-col-left {
+            flex-grow: 1;
+            margin-left: 20px;
+            padding-right: 0;
+            font-size: 17px;
+        }   
+        
+        .f-col-right {
+            text-align: right;
+            padding-left: 0;
+            padding-right: 20px;
+        }
+    }
+}

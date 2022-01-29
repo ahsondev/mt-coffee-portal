@@ -1,0 +1,6 @@
+@media screen and (-ms-high-contrast: active) {
+  /* All high contrast styling rules */
+    img[role="presentation"]{
+        visibility: hidden !important;
+    }
+}

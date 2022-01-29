@@ -1,0 +1,57 @@
+.c-icon-button {
+    margin: 0;    
+    padding: 2px 4px;
+    touch-action: none; // disable double tap zoom for ios
+    
+    max-height: 35px;
+    max-width: 35px;
+    font-size: 15px;
+    display: inline-block;
+    padding: 9px 6px 10px;
+    background-color: transparent;
+    color: #000;
+    line-height: 1;
+    text-align: center;
+    vertical-align: bottom;
+    cursor: pointer;
+    
+    outline: transparent solid 1px;
+    border: 1px solid transparent;
+    // box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+
+    &[aria-disabled="true"] {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    &:hover {
+        background-color: rgba(0,0,0,.05);
+        border-color: currentColor;
+        box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+    }
+
+    &:before {
+        display: inline-block;
+        font: "mtcoffee"; // TODO: make a global variable for our glyphicons font name. Seriously.
+    }
+
+    @include kb-focus {
+      &:focus {
+        outline: 2px dashed currentColor;
+        outline-offset: -2px;
+      }
+    }
+}
+
+.icon-svg {
+    display: inline-block;
+
+    > img {
+        max-height: 1.25em;
+        max-width: 2em;
+        line-height: inherit;
+        font-size: inherit;
+        height: 100%;
+        width: 100%;
+    }
+}

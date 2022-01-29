@@ -1,0 +1,51 @@
+.mt-abstractManagePage {
+    .cc-iconButtonHeader {
+        width: 50px;
+
+        @include small-screen {
+            width: unset;
+        }
+    }
+}
+
+.mt-abstractManagePageSidePanel {
+    .cc-sidePanelForm {
+        display: grid;
+        // grid-template: 150px / auto auto auto;
+        grid-template-rows: min-content 1fr min-content;
+        grid-template:
+            "mt-sidePanel-header" min-content
+            "mt-sidePanel-content" 1fr
+            "mt-sidePanel-footer" min-content;
+    }
+
+    .cc-sidePanelHeader {
+        grid-area: mt-sidePanel-header;
+    }
+
+    .cc-sidePanelContent {
+        grid-area: mt-sidePanel-content;
+        padding-bottom: 24px;
+    }
+
+    .cc-sidePanelButtonsBelow {
+        width: 100%;
+        grid-area: mt-sidePanel-footer;
+        box-shadow: 0 -3.2px 7.2px 0 rgba(0,0,0,.132), 0 -0.6px 1.8px 0 rgba(0,0,0,.108);
+        background: get-background(background-lighter);
+    }
+}
+
+.f-editTable > .c-cardTable {
+    .c-text-field {
+        margin: 0;
+    }
+    
+    .c-checkbox span:before {
+        top: -14px;
+    }
+
+    .c-checkbox > .c-label {
+        margin: 0;
+    }
+}

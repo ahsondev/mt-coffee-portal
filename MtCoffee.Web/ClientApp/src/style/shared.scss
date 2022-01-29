@@ -1,0 +1,16 @@
+/* BASE - Base Variable file along with starting point Mixins and Placeholders.
+========================================================================== */
+@import "./shared/_section-header.scss";
+@import './shared/_color-functions.scss';
+// @import "base/mixins/_border.scss";
+// @import "base/_variables.scss"; 
+// @import "base/_normalize.scss";
+// @import "base/_foundation.scss"; 
+
+@import './shared/icon-variables';
+@import './shared/colors';
+@import './shared/visibility';
+@import './shared/variables';
+// @import 'typography';
+// @import 'motion';
+

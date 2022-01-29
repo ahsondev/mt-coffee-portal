@@ -1,0 +1,75 @@
+{
+  "name": "mtcoffee.web",
+  "version": "0.2.5",
+  "private": true,
+  "cracoConfig": "src/build/config/craco.config.js",
+  "dependencies": {
+    "@craco/craco": "^6.1.1",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@reduxjs/toolkit": "^1.5.1",
+    "@types/node": "^14.14.41",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router": "^5.1.13",
+    "@types/react-router-dom": "^5.1.7",
+    "focus-trap-react": "^8.4.2",
+    "merge": "^2.1.1",
+    "node-sass": "npm:sass@^1.32.10",
+    "oidc-client": "^1.11.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "4.0.3",
+    "redux": "^4.0.5",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.5",
+    "ajv": "^8.1.0",
+    "cross-env": "^7.0.3",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "no-mixed-operators": "off",
+      "no-unused-vars": "warn",
+      "no-unused-expressions": "warn",
+      "no-unused-labels": "warn",
+      "arrow-spacing": "warn",
+      "no-empty-function": "warn",
+      "no-debugger": "warn",
+      "no-console": "warn",
+      "prefer-const": "warn",
+      "no-var": "error",
+      "no-useless-constructor": "warn"
+    }
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "fonts": "node src/build/scripts/extract-font-zip.js && node src/build/scripts/build-fonts-css.js",
+    "start-cra": "rimraf ./build && react-scripts start",
+    "build-cra": "react-scripts build --jsx",
+    "eject-cra": "react-scripts eject",
+    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "lint": "eslint ./src/"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

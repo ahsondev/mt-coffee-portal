@@ -1,0 +1,135 @@
+@use "sass:math";
+
+@include section_header("G R I D _ A N D _ L A Y O U T _ S E C T I O N ",
+"Grid styles and layouts to organize components and sections on the web pages.");
+
+@mixin print-data-grid-col($n,$d) {
+    $data-grid-width: percentage(math.div($n, $d));
+    @if $d == 12 { 
+        [data-grid~="col-#{$n}"] { width: $data-grid-width; }
+    } @else {
+        [data-grid~="col-#{$n}-#{$d}"] { width: $data-grid-width; }
+    }
+}
+ 
+@include print-data-grid-col(1,5); 
+@include print-data-grid-col(1,7); 
+@include print-data-grid-col(1,8);
+@for $i from 1 through 12 {
+    @include print-data-grid-col($i,12);
+}
+
+
+@mixin print-stack($stackNumber, $maxWidth){
+@media screen and (max-width:#{$maxWidth}) {
+    [data-grid~="stack-#{$stackNumber}"]>[data-grid] {
+        float: none;
+        width: 100%;
+        display: block;
+        padding: inherit 0
+    }
+}
+}
+
+@include print-stack(5,1778px);
+@include print-stack(4,1399px);
+@include print-stack(3,1083px); 
+@include print-stack(2,767px);
+
+@media screen and (max-width:539px) {
+    [data-grid*="col-"] {
+        float: none;
+        width: 100%;
+        display: block;
+        padding: inherit 0
+    }
+}
+
+@media screen and (max-width:1083px) {
+    [data-grid~="container"] {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+
+[data-grid~="container"] {
+	display: flex;
+	flex-wrap: wrap;
+    box-sizing: border-box;
+    max-width: calc(1600px + 10%);
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    zoom: 1;
+}
+
+[data-grid*="col-"] {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  float: left;
+  min-height: 1px;
+  display: block;
+  zoom: 1;
+}
+
+[data-grid*="col-"][data-grid*="f-fill-v"]{
+  display: flex;
+}
+
+
+[data-grid~="pad-12x"]>[data-grid] {
+    padding-left: 18px;
+    padding-right: 18px
+}
+
+@media screen and (max-width:1778px) {
+    [data-grid~="pad-12x"]>[data-grid] {
+        padding-left: 24px;
+        padding-right: 24px
+    }
+}
+
+@media screen and (max-width:1083px) {
+    [data-grid~="pad-12x"]>[data-grid] {
+        padding-left: 18px;
+        padding-right: 18px
+    }
+}
+
+@media screen and (max-width:767px) {
+    [data-grid~="pad-12x"]>[data-grid] {
+        padding-left: 12px;
+        padding-right: 12px
+    }
+}
+
+@media screen and (max-width:539px) {
+    [data-grid~="pad-12x"]>[data-grid] {
+        padding-left: 12px;
+        padding-right: 12px
+    }
+}
+
+[data-grid~="pad-6x"]>[data-grid] {
+    padding-left: 12px;
+    padding-right: 12px
+}
+
+[data-grid~="pad-3x"]>[data-grid] {
+    padding-left: 6px;
+    padding-right: 6px
+}
+
+[data-grid~="pad-2x"]>[data-grid] {
+    padding-left: 4px;
+    padding-right: 4px
+}
+
+[data-grid~="container"]:after,
+[data-grid*="col-"]:after 
+{
+  clear: both; 
+  content: " ";
+  display: table; 
+}

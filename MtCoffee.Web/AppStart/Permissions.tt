@@ -1,0 +1,41 @@
+<#@ include file="Permissions.ttinclude" #>
+<#+ 
+public static class Configuration
+{
+	public static readonly string Namespace = "MtCoffee.Web";
+	public static readonly string EnumName = "Permissions";
+    public static readonly bool EnableHtmlHelpers = false;
+    public static readonly bool EnableHasPermissionAttribute = true;
+
+        
+	public static readonly string EnumModelName = "PermissionSet";
+    public static readonly bool EnablePermissionModel = true;
+
+    public static readonly object Nodes = new
+    {
+		CanWatchOtherPeoplePlayVideoGames = "entertainment.videogames.view",
+		CanViewProducts = "products.view",
+    };
+
+    public static System.Collections.Generic.Dictionary<string, string[]> ConfigureRolePermissions()
+    {
+        var perms = new System.Collections.Generic.Dictionary<string, string[]>();
+
+        perms["Guest"] = new string[]{
+            "products.view"
+        };
+        perms["Customer"] = new string[]{
+            "products.view"
+        };
+        perms["Employee"] = new string[]{
+            "products.view"
+        };
+        perms["Manager"] = new string[]{
+            "products.view"
+        };
+        perms["Admin"] = new string[]{"*"};
+
+        return perms;
+    }
+}
+#>

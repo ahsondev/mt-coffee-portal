@@ -1,0 +1,43 @@
+@include section_header("P R O G R E S S  _ S E C T I O N", "");
+
+// $progress-height:               34px !default;
+// $progress-font-size:            16px !default;
+// $progress-bg:                   #e9ecef !default;
+// $progress-border-radius:        3px !default;
+// $progress-box-shadow:           inset 0 .1rem .1rem rgba(#000,.1) !default;
+// $progress-bar-color:            #fff !default;
+// $progress-bar-bg:               get-color(primary) !default;
+// $progress-bar-animation-timing: 1s linear infinite !default;
+// $progress-bar-transition:       width .6s ease !default;
+
+// @keyframes progress-bar-stripes {
+//   from { background-position: $progress-height 0; }
+//   to { background-position: 0 0; }
+// }
+
+// .c-progress {
+//   display: flex;
+//   height: $progress-height;
+//   overflow: hidden; // force rounded corners by cropping it
+//   font-size: $progress-font-size;
+//   background-color: $progress-bg;
+//   margin-top: 12px;
+//   @include border-radius($progress-border-radius);
+// }
+
+// .c-progress-bar {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: $progress-bar-color;
+//   background-color: $progress-bar-bg;
+// }
+
+// .c-progress-bar-striped {
+//   @include gradient-striped();
+//   background-size: $progress-height $progress-height;
+// }
+
+// .c-progress-bar-animated {
+//   animation: progress-bar-stripes $progress-bar-animation-timing;
+// }

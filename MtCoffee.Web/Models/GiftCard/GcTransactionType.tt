@@ -1,0 +1,42 @@
+﻿<#@ include file="../StringEnum.ttinclude" #>
+
+
+<#+ 
+public static class Configuration
+{
+	public static readonly string Namespace = "MtCoffee.Web.Models.GiftCard";
+	public static readonly string EnumName = "GcTransactionType";
+    public static readonly string ValuePropertyName = "Value";
+	public static readonly bool IncludeComments = true;
+
+    public static readonly object Nodes = new
+    {
+                BalanceInquiry = "001",
+                Redeem = "002",
+                AddValue = "003",
+                VoidTransaction = "004",
+                ActivateCard = "005",
+                DeactivateWithRefund = "006",
+                DeactivateWithNoRefund = "007",
+                ReissueCard = "008",
+                StoreCredit = "009",
+                BalanceTransfer = "014",
+                TipAdjust = "012",
+                ExpireDateAdjust = "022",
+                AddPoints = "020",
+                RedeemPoints = "021",
+                PointsBalanceInquiry = "023",
+                ActivatePoints= "024",
+                PointRefund= "025",
+                PointBalanceTransfer = "026",
+                VoidPoints = "027",
+                History = "200",
+                PointHistory = "210",
+                SignOn = "010",
+                SignOff = "011",
+                CustomerService = "118"
+    };
+}
+#>
+
+

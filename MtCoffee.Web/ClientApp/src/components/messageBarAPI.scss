@@ -1,0 +1,115 @@
+// This is for the message bar section that shows all of our messages on the site.
+// the build has this particular error Expected "#message-bar-section" to have no more than 0 ID selectors                  selector-max-id
+// here is the documentation to the reasoning https://stylelint.io/user-guide/rules/selector-max-id
+
+/* We don't want to cover up the scroll bar on the right side */
+$scrollbarMargin: 20px;
+
+.message-bar-section {
+  position: fixed;
+
+  //margin: inherit;
+  //margin-right: $scrollbarMargin;
+  margin-right: auto;
+  margin-left: auto;
+  padding: inherit;
+  left: 0;
+  right: 0;
+  top: 55px;
+  z-index: 10000;
+  max-width: 700px;
+  padding: 0 12px;
+
+  > div {
+    margin-right: -$scrollbarMargin;
+  }
+}
+
+.ms-MessageBar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 5px 10px -10px rgba(0, 0, 0, 0.5), 0 5px 20px -10px rgba(0, 0, 0, 0.3);
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    font-weight: 400;
+    background: rgb(253, 231, 233); // the "default" bg
+    color: get-color(font);
+    min-height: 32px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    word-break: break-word;
+    overflow: hidden;
+
+
+    .ms-MessageBar-content {
+        display: flex;
+        width: 100%;
+        line-height: normal;
+        word-break: break-word;
+    }
+
+    .ms-MessageBar-icon {
+        font-size: 16px;
+        min-width: 16px;
+        min-height: 16px;
+        display: flex;
+        flex-shrink: 0;
+        margin: 8px 0 8px 8px;
+
+        .icon-x-before {
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+            font-style: normal;
+            font-weight: normal;
+            color: rgb(168, 0, 0);
+        }
+    }
+
+    .ms-MessageBar-text {
+        min-width: 0px;
+        display: flex;
+        flex: 1 1;
+        margin: 8px;
+        font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .ms-MessageBar-innerText {
+        line-height: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &.f-expanded {
+            overflow: visible;
+            white-space: pre-wrap;
+        }
+    }
+
+
+    // .c-icon-button {
+    //     // flex-shrink: 0;
+    //     // user-select: none;
+    //     // outline: transparent;
+    //     // position: relative;
+    //     // font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    //     // -webkit-font-smoothing: antialiased;
+    //     // font-size: 14px;
+    //     // font-weight: 400;
+    //     // box-sizing: border-box;
+    //     // border: none;
+    //     // display: inline-block;
+    //     // text-decoration: none;
+    //     // text-align: center;
+    //     // cursor: pointer;
+    //     // padding: 8px 12px;
+    //     // border-radius: 2px;
+    //     // width: 32px;
+    //     // height: 32px;
+    //     // background-color: transparent;
+    //     // color: rgb(0, 120, 212);
+    // }
+  }

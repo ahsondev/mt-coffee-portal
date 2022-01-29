@@ -1,0 +1,216 @@
+
+html {
+  box-sizing: border-box; }
+
+body {
+  font-size: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-width: 320px;
+  color: #000;
+  background-color: #e6e6e6;
+  touch-action: manipulation; // disable double tap zoom for ios
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.theme-light {
+    color: #000;
+    background-color: #e6e6e6;
+}
+
+.theme-dark {
+    color: #FFF;
+    background-color: #252526;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+ul {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+ol,
+ul {
+    padding: 0;
+    list-style: none
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle
+}
+
+address {
+    font: inherit
+}
+
+dl,
+dd,
+figure {
+    margin: 0
+}
+
+a:link,
+a:focus,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: inherit
+}
+
+q,
+em,
+i,
+var {
+    font-style: italic
+}
+
+strong,
+b {
+    font-weight: 700
+}
+
+mark {
+    background: #FFF100;
+    padding: 1px 4px 2px
+}
+
+@media screen and (-ms-high-contrast:active) {
+    mark {
+        outline: 1px solid;
+        color: inherit
+    }
+}
+
+del,
+s {
+    color: rgba(0, 0, 0, .6)
+}
+
+.theme-light del,
+.theme-dark .theme-light del,
+.theme-light s,
+.theme-dark .theme-light s {
+    color: rgba(0, 0, 0, .6)
+}
+
+.theme-dark del,
+.theme-light .theme-dark del,
+.theme-dark s,
+.theme-light .theme-dark s {
+    color: rgba(255, 255, 255, .6)
+}
+
+u,
+ins {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .6)
+}
+
+.theme-light u,
+.theme-dark .theme-light u,
+.theme-light ins,
+.theme-dark .theme-light ins {
+    border-bottom: 1px solid rgba(0, 0, 0, .6)
+}
+
+.theme-dark u,
+.theme-light .theme-dark u,
+.theme-dark ins,
+.theme-light .theme-dark ins {
+    border-bottom: 1px solid rgba(255, 255, 255, .6)
+}
+
+small,
+sub,
+sup {
+    font-size: .8em
+}
+
+abbr,
+dfn {
+    font-style: normal;
+    border-bottom: 1px dotted rgba(0, 0, 0, .6)
+}
+
+.theme-light abbr,
+.theme-dark .theme-light abbr,
+.theme-light dfn,
+.theme-dark .theme-light dfn {
+    border-bottom: 1px dotted rgba(0, 0, 0, .6)
+}
+
+.theme-dark abbr,
+.theme-light .theme-dark abbr,
+.theme-dark dfn,
+.theme-light .theme-dark dfn {
+    border-bottom: 1px dotted rgba(255, 255, 255, .6)
+}
+
+cite,
+time {
+    font-style: normal
+}
+
+code,
+pre,
+kbd,
+samp {
+    font-family: Consolas, "Courier New", Courier, monospace
+}
+
+kbd {
+    border-radius: 2px;
+    padding: 1px 4px 2px;
+    background: rgba(0, 0, 0, .6);
+    color: #FFF
+}
+
+kbd kbd {
+    padding: 0
+}
+
+.theme-light kbd,
+.theme-dark .theme-light kbd {
+    background: rgba(0, 0, 0, .6);
+    color: #FFF
+}
+
+.theme-dark kbd,
+.theme-light .theme-dark kbd {
+    background: rgba(255, 255, 255, .6);
+    color: #000
+}
+
+bdo {
+    direction: rtl
+}
+
+input,
+input[type="search"] {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0
+}

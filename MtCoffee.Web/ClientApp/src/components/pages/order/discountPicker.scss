@@ -1,0 +1,30 @@
+.mt-discountPicker-select {
+  li.MuiListItem-root {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+    @include kb-focus {
+      outline: $focus-outline-style;
+      outline-offset: -3px;
+    }
+
+    .cc-label {
+      font-size: 14px;
+      font-weight: 200;
+    }
+
+    .cc-value {
+      font-size: 14px;
+      font-weight: 600;
+      padding-left: 14px;
+    }
+  } 
+}
+
+.mt-discountPicker-sel-input {
+  .MuiSelect-nativeInput { display: none; }
+  .MuiSelect-select.MuiSelect-select { padding-right: 0; min-width: 0; }
+  .MuiSvgIcon-root { display: none; }
+}

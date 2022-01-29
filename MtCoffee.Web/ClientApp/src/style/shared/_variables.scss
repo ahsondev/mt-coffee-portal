@@ -1,0 +1,31 @@
+// Z - Indexes
+$zIndex-shade-panel: 200;
+$zIndex-drawer: $zIndex-shade-panel+1;
+$zIndex-navmenu: 900;
+$zIndex-numberPicker: 1000;
+
+/* G L O B A L _ S E T T I N G S */
+$focus-outline-style: 2px dashed currentColor;
+$focus-outline-style-buttons: 2px dashed;
+$focus-outline-style-navbar: 2px dashed currentColor;
+
+$header-height: 50px;
+$outline-style: dashed;
+$outline-thickness: 2px;
+$box-shadow-selected-item: 0 3.2px 7.2px 2px rgba(get-color(primary, true), 0.132), 0 0.6px 1.8px 0 rgba(get-color(primary, true), 0.108);
+$box-shadow-selected-item-neutral: 0 3.2px 7.2px 2px rgba(85, 85, 85, 0.1), 0 0.6px 1.8px 0 rgba(85, 85, 85, 0.1);
+$box-shadow-button: 0 1.6px 3px -0.75px rgba(0, 0, 0, 0.1);
+$box-shadow-button-primary: 0 2px 4px -0.75px rgba(0, 0, 0, 0.3);
+$box-shadow-card: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+$box-shadow-panel: 0 5px 9px -2px rgba(85, 85, 85, 0.1), 0 1.5px 1.8px 0 rgba(85, 85, 85, 0.1);
+$text-shadow: 0 0 2px rgba(get-color(primary, true), 0.5);
+/*
+* -------------------- Viewport breakpoints --------------------
+* The website defaults to the layout between the medium and large
+* breakpoints. There's no need to define a media query for that range.
+*/
+
+$break-extra-small-screen: 445px;
+$break-small-screen: 670px;
+$break-medium-screen: 1023px;
+$break-large-screen: 1900px;

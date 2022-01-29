@@ -1,0 +1,17 @@
+@include section_header("D I V I D E R  _ S E C T I O N", "Styling for the HR tags and some padding options for it.");
+
+hr.c-divider, hr.c-subdivider{
+	border: 0;
+	margin: 0;
+    width: 100%;
+
+	&.f-pad-bottom-3x { margin-bottom: 12px; }
+	&.f-pad-bottom-6x { margin-bottom: 24px; }
+	&.f-pad-top-3x { margin-top: 12px; }
+	&.f-pad-top-6x { margin-top: 24px; }
+	&.f-pad-vertical-3x { margin: 12px 0; } 
+	&.f-pad-vertical-6x { margin: 24px 0; }
+}
+
+hr.c-divider { border-top: 1px solid rgba(0, 0, 0, .2); }
+hr.c-subdivider { border-top: 1px solid rgba(0, 0, 0, .1); }

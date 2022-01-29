@@ -1,0 +1,27 @@
+.create-orders-page {
+    color: inherit;
+
+    #fy-order-details-section {
+        height: 350px;
+    }
+
+    #fy-product-catalog-section {
+        height: calc((100 * var(--vh)) - #{350 + $header-height});
+        // navbar = 50 + height of above section which is 300.
+    }
+
+    .f-line-item-section {
+        height: inherit;
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1 1;
+        display: flex;
+        background-color: get-color(border-secondary); // #CCC
+
+        @include small-screen {
+            flex-basis: 100%;
+            width: 100%;
+            order: 2;
+        }
+    }
+}

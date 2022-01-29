@@ -1,0 +1,285 @@
+@include section_header("T Y P O G R A P H Y _ S E C T I O N",
+"This section contains fonts and text styles for use in web development.");
+
+// @font-face {
+//     font-family: "MWF-MDL2";
+//     src: url("../fonts/MWFMDL2.woff")format("woff"), url("../fonts/MWFMDL2.ttf")format("truetype"), url("../fonts/MWFMDL2.svg")format("svg")
+// }
+
+// @font-face {
+//     font-family: "SegoeUI";
+//     src: local("Segoe UI"), url("../fonts/normal.woff2")format("woff2"), url("../fonts/normal.woff")format("woff"), url("../fonts/normal.ttf")format("truetype"), url("../fonts/normal.svg")format("svg");
+//     font-weight: 400
+// }
+
+// @font-face {
+//     font-family: "SegoeUI";
+//     src: local("Segoe UI Light"), url("../fonts/light.woff2")format("woff2"), url("../fonts/light.woff")format("woff"), url("../fonts/light.ttf")format("truetype"), url("../fonts/light.svg")format("svg");
+//     font-weight: 100
+// }
+
+// @font-face {
+//     font-family: "SegoeUI";
+//     src: local("Segoe UI Semilight"), local("Segoe UI"), url("../fonts/semilight.woff2")format("woff2"), url("../fonts/semilight.woff")format("woff"), url("../fonts/semilight.ttf")format("truetype"), url("../fonts/semilight.svg")format("svg");
+//     font-weight: 200
+// }
+
+// @font-face {
+//     font-family: "SegoeUI";
+//     src: local("Segoe UI Semibold"), url("../fonts/semibold.woff2")format("woff2"), url("../fonts/semibold.woff")format("woff"), url("../fonts/semibold.ttf")format("truetype"), url("../fonts/semibold.svg")format("svg");
+//     font-weight: 600
+// }
+
+// @font-face {
+//     font-family: "SegoeUI";
+//     src: local("Segoe UI Bold"), local("Segoe UI"), url("../fonts/bold.woff2")format("woff2"), url("../fonts/bold.woff")format("woff"), url("../fonts/bold.ttf")format("truetype"), url("../fonts/bold.svg")format("svg");
+//     font-weight: 700
+// }
+
+@mixin font-style($cssClass, $font-size, $font-weight ,$line-height, $letter-spacing){
+	.#{$cssClass}{
+		font-size: $font-size;
+		font-weight: $font-weight;
+		line-height: $line-height;
+		letter-spacing: $letter-spacing;
+	}
+}
+
+@include font-style("c-heading-1", 62px, 100, 72px, -0.01em);
+//------------------------------------------------------------------------------
+.c-error-text {
+  color: red;  
+}
+
+.c-heading-1, .c-heading-2 {
+	letter-spacing: -0.01em;
+}
+.c-heading-1 {
+	font-size: 62px;
+	line-height: 72px;
+	padding: 38px 0 6p;
+	font-weight: 100;
+}
+
+.c-heading-2 {
+	font-size: 46px;
+	line-height: 56px;
+	padding: 37px 0 3px;
+    font-weight: 100;
+}
+
+.c-heading-3 { 
+	font-size: 34px;
+	line-height: 40px;
+    padding: 38px 0 2px;
+    font-weight: 100
+}
+
+.c-heading-4 {
+    font-size: 24px;
+    line-height: 28px;
+    padding: 36px 0 4px;
+    font-weight: 200;
+}
+
+.c-heading-5 {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 35px 0 5px;
+    font-weight: 200;
+}
+
+.c-heading-6 {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 37px 0 3px;
+    font-weight: 200;
+}
+
+//------------------------------------------------------------------------------
+
+.c-subheading-1 {
+    padding: 12px 0 2px;
+    font-weight: 200;
+	font-size: 34px;
+	line-height: 40px;
+}
+
+.c-subheading-2 {
+    font-size: 24px;
+    line-height: 28px;
+    padding: 4px 0 8px;
+    font-weight: 200;
+}
+
+.c-subheading-3 {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 8px 0 4px;
+    font-weight: 200;
+}
+
+.c-subheading-4 {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 9px 0 3px;
+    font-weight: 200;
+}
+
+.c-subheading-5 {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 8px 0 0;
+    font-weight: 200;
+}
+
+.c-subheading-6 {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 8px 0 0;
+    font-weight: 200;
+}
+
+//------------------------------------------------------------------------------
+
+.c-paragraph-1 {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 24px 0 4px;
+    font-weight: 200;
+}
+
+.c-paragraph-2 {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 25px 0 3px;
+    font-weight: 200;
+}
+
+.c-paragraph-3 {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 24px 0 0;
+    font-weight: 400;
+}
+
+.c-paragraph-4 {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 12px 0 0;
+    font-weight: 400;
+}
+
+//------------------------------------------------------------------------------
+
+.c-caption-1 {
+    font-size: 13px;
+    line-height: 16px;
+    padding: 3px 0 1px;
+    font-weight: 400;
+}
+
+.c-caption-2 {
+    font-size: 11px;
+    line-height: 16px;
+    padding: 4px 0 4px;
+    font-weight: 400
+}
+
+//------------------------------------------------------------------------------
+
+@media(max-width:767px) {
+    .c-heading-1 {
+        font-size: 46px;
+        line-height: 56px;
+		padding: 37px 0 3px;
+    }
+    .c-heading-2 {
+        font-size: 34px;
+        line-height: 40px;
+        padding: 38px 0 2px;
+    }
+    .c-heading-3 {
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .c-heading-4 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .c-heading-5 {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 37px 0 3px;
+    }
+    .c-heading-6 {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 39px 0 1px;
+    }
+	
+//---------------------------------------------------------
+	
+    .c-subheading-1 {
+        font-size: 26px;
+        line-height: 32px;
+        padding: 9px 0 3px;
+    }
+    .c-subheading-2 {
+        font-size: 20px;
+        line-height: 24px;
+        padding: 8px 0 4px;
+    }
+    .c-subheading-3 {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 4px 0 4px;
+    }
+    .c-subheading-4 {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 7px 0 5px;
+    }
+
+//---------------------------------------------------------
+
+    .c-paragraph-1 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .c-paragraph-2 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .c-paragraph-2 {
+        padding: 27px 0 1px;
+    }
+	
+//---------------------------------------------------------
+
+    .c-caption-1 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .c-caption-2 {
+        font-size: 10px;
+        line-height: 12px;
+		padding: 2px 0 2px;
+    }
+}
+
+.x-type-center {
+    text-align: center!important;
+}
+
+.x-type-right {
+    text-align: right!important;
+}
+
+.x-type-left {
+    text-align: left!important;
+}
+
+[class*="c-head"] + [class*="c-paragraph"]{
+	padding-top:4px;
+}

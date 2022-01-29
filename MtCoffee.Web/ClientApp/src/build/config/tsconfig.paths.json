@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "../../../src",
+    "paths": {
+      "@root/*": ["./*"],
+      "@utils/*": ["./utils/*"],
+      "@components/*": ["./components/*"],
+      "@pages/*": ["./components/pages/*"]
+    },
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "allowUnusedLabels": true,
+    "allowUnreachableCode": true
+  }
+}

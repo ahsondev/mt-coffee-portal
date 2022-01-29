@@ -1,0 +1,65 @@
+
+$icon-codes-map: (
+  heart-empty: '\E800',
+  heart: '\E801',
+  left-open: '\F007',
+  left: '\E802',
+  right-open: '\F006',
+  right: '\E803',
+  down-open: '\F004',
+  up-open: '\F005',
+  down: '\E804',
+  up: '\E805',
+  menu: '\F008',
+  plus: '\E806',
+  minus: '\E807',
+  trash-empty: '\E808',
+  cancel-alt: '\E80B',
+  cancel-alt-filled: '\E80C',
+  credit-card: '\E80D',
+  cc-visa: '\F1F0',
+  money: '\F0D6',
+  dot-3: '\E80E',
+  check: '\E80F',
+  check-mfg: '\E810',
+  circle: '\F111',
+  circle-empty: '\F10C',
+  circle-thin: '\F1DB',
+  dot-circled: '\F192',
+  ok-circled: '\F06D',
+  info-circled-alt: '\F086',
+  pencil: '\E811',
+  cancel: '\E812',
+  list-bullet: '\F0CA',
+  clipboard: '\E813',
+  flow-split: '\E814',
+  cog-alt: '\E815',
+  plus-squared-alt: '\F196',
+  minus-squared-alt: '\F147',
+  plus-squared: '\F0FE',
+  minus-squared: '\F146',
+  link: '\E809',
+  unlink: '\F127',
+  deny: '\E80A',
+  lock: '\F512',
+  lock-open: '\F513',
+  target: '\E816',
+  hot-soup: '\E817',
+  bread-outline: '\E818',
+  juice: '\E819',
+  coffee-pot: '\E81A',
+  bread: '\E81B',
+  beverage: '\E81C',
+  eye: '\E81D',
+  eye-off: '\E81E',
+  floppy: '\E81F',
+);
+
+@function get-icon-code($name, $literal: true) {
+  @if $literal == true {
+    @return map-get($icon-codes-map, $name);
+  }
+  @else {
+    @return var(--mt-icon-code-#{$name});
+  }
+}

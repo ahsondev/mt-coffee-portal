@@ -1,0 +1,206 @@
+
+@font-face {
+  font-family: 'mtcoffee';
+  src: url('/assets/font/mtcoffee.eot?1619906352862#iefix') format('embedded-opentype'),
+        url('/assets/font/mtcoffee.woff2?1619906352862') format('woff2'),
+        url('/assets/font/mtcoffee.woff?1619906352862') format('woff'),
+        url('/assets/font/mtcoffee.ttf?1619906352862') format('truetype'),
+        url('/assets/font/mtcoffee.svg?1619906352862#mtcoffee') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-x-before:before, .icon-x-after:after {
+  font-family: "mtcoffee";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-x-before.icon-heart-empty:before { content: '\E800'; }
+.icon-x-before.icon-heart:before { content: '\E801'; }
+.icon-x-before.icon-left-open:before { content: '\F007'; }
+.icon-x-before.icon-left:before { content: '\E802'; }
+.icon-x-before.icon-right-open:before { content: '\F006'; }
+.icon-x-before.icon-right:before { content: '\E803'; }
+.icon-x-before.icon-down-open:before { content: '\F004'; }
+.icon-x-before.icon-up-open:before { content: '\F005'; }
+.icon-x-before.icon-down:before { content: '\E804'; }
+.icon-x-before.icon-up:before { content: '\E805'; }
+.icon-x-before.icon-menu:before { content: '\F008'; }
+.icon-x-before.icon-plus:before { content: '\E806'; }
+.icon-x-before.icon-minus:before { content: '\E807'; }
+.icon-x-before.icon-trash-empty:before { content: '\E808'; }
+.icon-x-before.icon-cancel-alt:before { content: '\E80B'; }
+.icon-x-before.icon-cancel-alt-filled:before { content: '\E80C'; }
+.icon-x-before.icon-credit-card:before { content: '\E80D'; }
+.icon-x-before.icon-cc-visa:before { content: '\F1F0'; }
+.icon-x-before.icon-money:before { content: '\F0D6'; }
+.icon-x-before.icon-dot-3:before { content: '\E80E'; }
+.icon-x-before.icon-check:before { content: '\E80F'; }
+.icon-x-before.icon-check-mfg:before { content: '\E810'; }
+.icon-x-before.icon-circle:before { content: '\F111'; }
+.icon-x-before.icon-circle-empty:before { content: '\F10C'; }
+.icon-x-before.icon-circle-thin:before { content: '\F1DB'; }
+.icon-x-before.icon-dot-circled:before { content: '\F192'; }
+.icon-x-before.icon-ok-circled:before { content: '\F06D'; }
+.icon-x-before.icon-info-circled-alt:before { content: '\F086'; }
+.icon-x-before.icon-pencil:before { content: '\E811'; }
+.icon-x-before.icon-cancel:before { content: '\E812'; }
+.icon-x-before.icon-list-bullet:before { content: '\F0CA'; }
+.icon-x-before.icon-clipboard:before { content: '\E813'; }
+.icon-x-before.icon-flow-split:before { content: '\E814'; }
+.icon-x-before.icon-cog-alt:before { content: '\E815'; }
+.icon-x-before.icon-plus-squared-alt:before { content: '\F196'; }
+.icon-x-before.icon-minus-squared-alt:before { content: '\F147'; }
+.icon-x-before.icon-plus-squared:before { content: '\F0FE'; }
+.icon-x-before.icon-minus-squared:before { content: '\F146'; }
+.icon-x-before.icon-link:before { content: '\E809'; }
+.icon-x-before.icon-unlink:before { content: '\F127'; }
+.icon-x-before.icon-deny:before { content: '\E80A'; }
+.icon-x-before.icon-lock:before { content: '\F512'; }
+.icon-x-before.icon-lock-open:before { content: '\F513'; }
+.icon-x-before.icon-target:before { content: '\E816'; }
+.icon-x-before.icon-hot-soup:before { content: '\E817'; }
+.icon-x-before.icon-bread-outline:before { content: '\E818'; }
+.icon-x-before.icon-juice:before { content: '\E819'; }
+.icon-x-before.icon-coffee-pot:before { content: '\E81A'; }
+.icon-x-before.icon-bread:before { content: '\E81B'; }
+.icon-x-before.icon-beverage:before { content: '\E81C'; }
+.icon-x-before.icon-eye:before { content: '\E81D'; }
+.icon-x-before.icon-eye-off:before { content: '\E81E'; }
+.icon-x-before.icon-floppy:before { content: '\E81F'; }
+.icon-x-after.icon-heart-empty:after { content: '\E800'; }
+.icon-x-after.icon-heart:after { content: '\E801'; }
+.icon-x-after.icon-left-open:after { content: '\F007'; }
+.icon-x-after.icon-left:after { content: '\E802'; }
+.icon-x-after.icon-right-open:after { content: '\F006'; }
+.icon-x-after.icon-right:after { content: '\E803'; }
+.icon-x-after.icon-down-open:after { content: '\F004'; }
+.icon-x-after.icon-up-open:after { content: '\F005'; }
+.icon-x-after.icon-down:after { content: '\E804'; }
+.icon-x-after.icon-up:after { content: '\E805'; }
+.icon-x-after.icon-menu:after { content: '\F008'; }
+.icon-x-after.icon-plus:after { content: '\E806'; }
+.icon-x-after.icon-minus:after { content: '\E807'; }
+.icon-x-after.icon-trash-empty:after { content: '\E808'; }
+.icon-x-after.icon-cancel-alt:after { content: '\E80B'; }
+.icon-x-after.icon-cancel-alt-filled:after { content: '\E80C'; }
+.icon-x-after.icon-credit-card:after { content: '\E80D'; }
+.icon-x-after.icon-cc-visa:after { content: '\F1F0'; }
+.icon-x-after.icon-money:after { content: '\F0D6'; }
+.icon-x-after.icon-dot-3:after { content: '\E80E'; }
+.icon-x-after.icon-check:after { content: '\E80F'; }
+.icon-x-after.icon-check-mfg:after { content: '\E810'; }
+.icon-x-after.icon-circle:after { content: '\F111'; }
+.icon-x-after.icon-circle-empty:after { content: '\F10C'; }
+.icon-x-after.icon-circle-thin:after { content: '\F1DB'; }
+.icon-x-after.icon-dot-circled:after { content: '\F192'; }
+.icon-x-after.icon-ok-circled:after { content: '\F06D'; }
+.icon-x-after.icon-info-circled-alt:after { content: '\F086'; }
+.icon-x-after.icon-pencil:after { content: '\E811'; }
+.icon-x-after.icon-cancel:after { content: '\E812'; }
+.icon-x-after.icon-list-bullet:after { content: '\F0CA'; }
+.icon-x-after.icon-clipboard:after { content: '\E813'; }
+.icon-x-after.icon-flow-split:after { content: '\E814'; }
+.icon-x-after.icon-cog-alt:after { content: '\E815'; }
+.icon-x-after.icon-plus-squared-alt:after { content: '\F196'; }
+.icon-x-after.icon-minus-squared-alt:after { content: '\F147'; }
+.icon-x-after.icon-plus-squared:after { content: '\F0FE'; }
+.icon-x-after.icon-minus-squared:after { content: '\F146'; }
+.icon-x-after.icon-link:after { content: '\E809'; }
+.icon-x-after.icon-unlink:after { content: '\F127'; }
+.icon-x-after.icon-deny:after { content: '\E80A'; }
+.icon-x-after.icon-lock:after { content: '\F512'; }
+.icon-x-after.icon-lock-open:after { content: '\F513'; }
+.icon-x-after.icon-target:after { content: '\E816'; }
+.icon-x-after.icon-hot-soup:after { content: '\E817'; }
+.icon-x-after.icon-bread-outline:after { content: '\E818'; }
+.icon-x-after.icon-juice:after { content: '\E819'; }
+.icon-x-after.icon-coffee-pot:after { content: '\E81A'; }
+.icon-x-after.icon-bread:after { content: '\E81B'; }
+.icon-x-after.icon-beverage:after { content: '\E81C'; }
+.icon-x-after.icon-eye:after { content: '\E81D'; }
+.icon-x-after.icon-eye-off:after { content: '\E81E'; }
+.icon-x-after.icon-floppy:after { content: '\E81F'; }
+
+:root {
+  --mt-icon-code-heart-empty: '\E800';
+  --mt-icon-code-heart: '\E801';
+  --mt-icon-code-left-open: '\F007';
+  --mt-icon-code-left: '\E802';
+  --mt-icon-code-right-open: '\F006';
+  --mt-icon-code-right: '\E803';
+  --mt-icon-code-down-open: '\F004';
+  --mt-icon-code-up-open: '\F005';
+  --mt-icon-code-down: '\E804';
+  --mt-icon-code-up: '\E805';
+  --mt-icon-code-menu: '\F008';
+  --mt-icon-code-plus: '\E806';
+  --mt-icon-code-minus: '\E807';
+  --mt-icon-code-trash-empty: '\E808';
+  --mt-icon-code-cancel-alt: '\E80B';
+  --mt-icon-code-cancel-alt-filled: '\E80C';
+  --mt-icon-code-credit-card: '\E80D';
+  --mt-icon-code-cc-visa: '\F1F0';
+  --mt-icon-code-money: '\F0D6';
+  --mt-icon-code-dot-3: '\E80E';
+  --mt-icon-code-check: '\E80F';
+  --mt-icon-code-check-mfg: '\E810';
+  --mt-icon-code-circle: '\F111';
+  --mt-icon-code-circle-empty: '\F10C';
+  --mt-icon-code-circle-thin: '\F1DB';
+  --mt-icon-code-dot-circled: '\F192';
+  --mt-icon-code-ok-circled: '\F06D';
+  --mt-icon-code-info-circled-alt: '\F086';
+  --mt-icon-code-pencil: '\E811';
+  --mt-icon-code-cancel: '\E812';
+  --mt-icon-code-list-bullet: '\F0CA';
+  --mt-icon-code-clipboard: '\E813';
+  --mt-icon-code-flow-split: '\E814';
+  --mt-icon-code-cog-alt: '\E815';
+  --mt-icon-code-plus-squared-alt: '\F196';
+  --mt-icon-code-minus-squared-alt: '\F147';
+  --mt-icon-code-plus-squared: '\F0FE';
+  --mt-icon-code-minus-squared: '\F146';
+  --mt-icon-code-link: '\E809';
+  --mt-icon-code-unlink: '\F127';
+  --mt-icon-code-deny: '\E80A';
+  --mt-icon-code-lock: '\F512';
+  --mt-icon-code-lock-open: '\F513';
+  --mt-icon-code-target: '\E816';
+  --mt-icon-code-hot-soup: '\E817';
+  --mt-icon-code-bread-outline: '\E818';
+  --mt-icon-code-juice: '\E819';
+  --mt-icon-code-coffee-pot: '\E81A';
+  --mt-icon-code-bread: '\E81B';
+  --mt-icon-code-beverage: '\E81C';
+  --mt-icon-code-eye: '\E81D';
+  --mt-icon-code-eye-off: '\E81E';
+  --mt-icon-code-floppy: '\E81F';
+}

@@ -1,0 +1,135 @@
+.c-tabPanel-scroll {
+    overflow: auto;
+}
+
+.c-tabList {
+    display: flex;
+    height: inherit;
+
+    .cc-tabPanelContainer {
+        flex: 1 1;
+    }
+    
+    .cc-tabPanelContainer > .cc-tabPanel {
+        height: inherit;
+        display: none;
+        
+        &.f-selected {
+            display: block;
+        }
+    }
+}
+
+.c-tabList.f-scroll {
+    .cc-tabPanelContainer {
+        overflow-y: auto;
+    }   
+}
+
+// Tabs on top.
+.c-tabList[aria-orientation="vertical"] {
+    flex-direction: column;
+
+    &.f-tabs-bottom > .cc-tabHeaderList {
+        order: 2;
+    }
+
+    > .cc-tabHeaderList {
+        flex-direction: row;
+        display: flex;
+        // flex-basis: 130px;
+        box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+        background: get-color(background);
+
+        .cc-tabHeaderContent {
+            margin: auto 0;
+            white-space: nowrap;
+        }
+
+        .cc-titleText {
+            display: inline-block;
+            padding-left: 4px;
+            font-size: 12px;
+
+            @include small-screen {
+                display: none;
+            }
+        }
+
+        .cc-tabHeader { // LI
+            cursor: pointer;
+            height: 30px;
+            padding: 0 8px;
+            display: flex;
+            border-right: 1px solid rgba(0,0,0,0.2);
+            
+            &.f-toggle-collapse {
+                display: none;
+            }
+
+            &.f-selected {
+                background: get-color(background-darker);
+                box-shadow: inset 0 1.6px 3.6px 0 rgba(0,0,0,.132), inset 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+            } 
+
+            @include kb-focus {
+                outline: $outline-thickness $outline-style currentColor;
+                outline-offset: -2px;
+            }
+        }
+    }
+}
+
+.c-tabList[aria-orientation="horizontal"] {
+    flex-direction: row;
+
+    .cc-tabPanelContainer {
+        height: inherit;
+    }   
+
+    .cc-tabHeaderList.f-closed {
+        flex-basis: 30px;
+        .cc-tabHeaderContent {
+            margin: auto;
+        }
+        
+        .cc-titleText {
+            display: none;
+        }
+
+        .cc-tabHeader {
+            width: 30px;
+        }
+    }
+
+    > .cc-tabHeaderList {
+        flex-direction: column;
+        display: flex;
+        flex-basis: 130px;
+        box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+        background: get-color(background);
+
+        .cc-tabHeaderContent {
+            margin: auto 0;
+        }
+
+        .cc-titleText {
+            display: inline-block;
+            padding-left: 4px;
+            font-size: 12px;
+        }
+
+        .cc-tabHeader { // LI
+            cursor: pointer;
+            width: 130px;
+            height: 30px;
+            display: flex;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+
+            &.f-selected {
+                background: get-color(background-darker);
+                box-shadow: inset 0 1.6px 3.6px 0 rgba(0,0,0,.132), inset 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+            } 
+        }
+    }
+}

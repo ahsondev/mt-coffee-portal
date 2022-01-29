@@ -1,0 +1,31 @@
+@import './common/root';
+@import './common/typography';
+
+/* BASE - Base Variable file along with starting point Mixins and Placeholders.
+========================================================================== */
+@import "./common/_normalize.scss";
+@import "./common/_foundation.scss"; 
+
+
+/* FRAMEWORK - Structure and layout files.
+========================================================================== */
+@import "./common/_grid.scss";
+@import "./common/_visibility.scss";
+@import "./common/_accessibility.scss";
+
+@import "./common/navigation/_data-js-href.scss";
+@import "./common/navigation/_hyperlink.scss";
+
+// @import 'typography';
+// @import 'motion';
+table {
+    border-collapse: collapse;
+}
+
+.x-float-right {
+    float: right;
+}
+
+.x-float-left {
+    float: left;
+}

@@ -1,0 +1,67 @@
+.c-numberPickerFlyout {
+    text-align: left;
+    background: get-color(background);
+    padding: 4px;
+    border: 1px solid transparent;
+    width: 182px;
+    height: 224px;
+    margin: auto;
+    zoom: 1.5;
+
+
+    box-shadow: 0 6.4px 14.4px 0 rgba(0,0,0,0.132), 0 1.2px 3.6px 0 rgba(0,0,0,0.216), 0 0.3px 0.9px 0 rgba(0,0,0,0.316);
+    box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.232), 0 0.6px 1.8px 0 rgba(0,0,0,.316);
+    // position: absolute;
+    // width: 200px;
+    // height: 300px;
+
+    .c-button {
+        margin: 4px;
+        width: 35px;
+        height: 35px;
+        position: relative;
+        padding: 0;
+    }
+
+    .c-text-field.cc-numberPickerInput {
+        margin: 0 6px 4px 4px;
+        width: 121px !important;
+        height: 35px !important;
+        display: inline;
+        padding-right: 4px;
+        text-align: right;
+
+        @include kb-focus {
+            outline: 2px solid currentColor;
+        }
+    }
+    
+    .c-button.icon-cancel-alt {
+        margin-left: 2px;
+    }
+
+    .cc-picker-row { display: flex; position: relative; }
+    .f-rowspan-2 {
+        position: absolute; 
+        top: 0;
+        left: 129px; // (35 * 3) + (4 *3) = 115 + 12 = 127
+        height: 78px; // 35 * 2 + 4 = 74
+        z-index: 2;
+    }
+
+}
+.c-numberPicker {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+
+    > .c-text-field, > .c-text-field[readonly] {
+        border-color: currentColor;
+        background-color: white;
+        border-bottom: 1px solid currentColor;
+    }
+}
+
+.c-shadePanel.z-numberPicker {
+    z-index: $zIndex-numberPicker;
+}

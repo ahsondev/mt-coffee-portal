@@ -1,0 +1,122 @@
+
+$sidebar-width: 0;
+$drawer-width-small: 320px;
+$drawer-width-medium: 550px;
+$drawer-width-medium-ls: 850px;
+$drawer-width-large: 850px;
+$drawer-width-large-ls: 1050px;
+$drawer-left-gap-extra-large: 230px;
+
+@mixin size-small {
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    box-shadow: none;
+}
+
+@mixin size($size) {
+    width: $size;
+    right: -#{$size};
+    left: calc(100vw - #{$size});
+}
+
+.c-sidePanel-shade {
+    background: get-color(background-dark-shade);
+    position: absolute;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $zIndex-drawer;
+}
+
+.c-sidePanel {
+    position: absolute;
+    top: $header-height;
+    right: -#{$drawer-width-small};
+    height: calc(100% - #{$header-height});
+    max-width: calc(100% - #{$sidebar-width});
+    overflow: hidden;
+    width: 0;
+    opacity: 0;
+    background-color: get-color(background-lighter);
+    box-shadow: rgba(0, 0, 0, 0.22) 0 25.6px 57.6px 0, rgba(0, 0, 0, 0.18) 0 4.8px 14.4px 0;
+    z-index: $zIndex-drawer;
+    // transition: right 0.15s linear, opacity 0.15s linear, width 0.15s linear;
+
+    .c-numberPicker {
+        width: 100%;
+    }
+    
+    &.c-sidePanel-open {
+        right: 0;
+        opacity: 1;
+        // transition: right 0s linear, opacity 0.15s linear;
+    }
+
+    @include small-screen {
+        @include size-small;
+    }
+}
+
+.c-sidePanel-scroll {
+    overflow: auto;
+}
+
+.c-sidePanel.c-sidePanel-medium {
+    @include size($drawer-width-medium);
+
+    @include small-screen {
+        @include size-small;
+    }
+
+    @include large-screen {
+        @include size($drawer-width-medium-ls);
+    }
+}
+
+.c-sidePanel.c-sidePanel-large {
+    @include size($drawer-width-large);
+
+    @include medium-screen {
+        @include size-small;
+    }
+
+    @include large-screen {
+        @include size($drawer-width-large-ls);
+    }
+}
+
+.c-sidePanel.c-sidePanel-extra-large {
+    left: #{$drawer-left-gap-extra-large};
+    width: unset;
+
+    @include small-screen {
+        left: 0;
+        @include size-small;
+    }
+
+    @include large-screen {
+        left: #{$drawer-left-gap-extra-large};
+        width: unset;
+    }
+}
+
+.c-sidePanel-close {
+    position: relative;
+    font-size: 12px;
+    float: right;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    z-index: $zIndex-drawer + 5;
+
+    &:hover, &:active, &:focus {
+        background-color: get-color(border);
+    }
+    
+    @include kb-focus {
+        outline: $outline-thickness $outline-style currentColor;
+        outline-offset: -2px;
+    }
+}

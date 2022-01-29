@@ -1,0 +1,155 @@
+.mt-line-item-table {
+    width: 100%;
+    min-width: 100%;
+    height: inherit;
+    overflow: auto;
+    text-align: right;
+    border-collapse: collapse;
+    > tbody { display: table-row-group; }
+    > tbody:after { clear: both; content: ''; } /* Make it so rows do not get super expanded in desktop view */
+
+    @include small-screen {
+        width: 100%;
+        display: block;
+        background: get-color(border-secondary); // #ccc
+
+        .c-numberPicker .c-text-field {
+            height: 24px;
+        }
+
+        > tbody { display: grid; }
+        > thead { @include acc-hide; }
+        .f-col-subtotal, .f-col-unit-price {
+            display: none;
+        }
+    }
+
+    .c-text-field {
+        width: 60px;
+        margin: 0 5px;
+        padding: 0;
+        // height: 20px;
+    }
+
+    &.f-border tr { border-bottom: 1px solid get-color(border); }
+
+    &.f-fixed-header th {
+        position: sticky;
+        top: -16px;
+    }
+
+    caption { @include acc-hide; }
+
+    tbody > tr {
+        border-left: 3px solid transparent;
+        margin: 0;
+        vertical-align: inherit;
+        border-color: inherit;
+
+        &.f-row-active {
+            background-color: get-color(background-lighter);
+            border-left: 3px solid get-color(primary);
+        }
+
+        @include small-screen {
+            border-bottom: 0;
+            display: flex;
+            flex-flow: column nowrap;
+            background: get-color(background-lighter);
+            margin: 8px 5px;
+            box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132), 0 0.6px 1.8px 0 rgba(0,0,0,.208);
+            max-width: 100%;
+            padding: 10px 5px;
+            display: table;
+        }
+    }
+
+    .cc-row-header {
+        display: none;
+
+        @include small-screen {
+            display: inline-block;
+            font-weight: 600;
+            padding: 8px 10px;
+            flex: 0 0 auto;
+            text-align: left;
+            display: table-cell;
+        }
+    }
+
+    .cc-row-cell {
+        overflow: hidden;
+        align-items: center;
+
+        @include small-screen {
+            flex: 1 1 auto;
+            padding: 0 10px;
+            text-align: start;
+            display: table-cell;
+        }
+    }
+
+    .f-col-desc {
+        text-align: left;
+
+        .f-descTitle {
+            color: black;
+        }
+    
+        .f-descSubtitle {
+            display: block;
+            color: gray;
+            font-size: 12px;
+            margin-top: 4px;
+
+            @include small-screen { display: none; }
+        }
+    }
+
+    .f-col-quantity {
+        white-space: nowrap;
+            
+        .c-text-field {
+            width: 60px;
+            margin: 0 4px;
+        }
+    }
+
+    > thead {
+        > tr {
+            height: 24px;
+            padding: 5px;
+            
+            > th {
+                background: #D9D9D9;
+                position: sticky;
+                top: 0;  /* 0px if you don't have a navbar, but something is required */
+                padding: 7px 10px;
+                font-size: 12px;
+                z-index: 2;
+            }
+        }
+    }
+
+    .f-line-item-row {
+        border-bottom: 1px solid #CACACA;
+        background: #FFFFFF;
+        font-size: 16px;
+    }
+
+    > tbody > tr > td {
+        height: 45px;
+        overflow-wrap: anywhere;
+        padding: 7px 10px;
+        font-size: 12px;
+        
+        @include small-screen {
+            display: flex;
+            flex-flow: row nowrap;
+            max-width: 100%;
+            padding: 0;
+            display: table-row;
+            height: 2em;
+        }
+    }
+}

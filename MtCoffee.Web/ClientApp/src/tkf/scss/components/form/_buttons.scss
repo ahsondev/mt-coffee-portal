@@ -1,0 +1,147 @@
+@include section_header("B U T T O N S _ S E C T I O N", "For all those clickable needs.");
+
+
+@mixin button($label,$baseFontColor: #000, $baseColor: rgba(0, 0, 0, .2), $hoverColor: null, $pressedColor: null){
+	@if $hoverColor == null {
+		$hoverColor: darken($baseColor, 3.5%);
+	}
+	@if $pressedColor == null {
+		$pressedColor: darken($baseColor, 3.5);
+	}
+	
+	&.f-#{$label}{
+		color: $baseFontColor;
+		background-color: $baseColor;
+	}
+	&.f-#{$label}:focus,
+	&.f-#{$label}:hover {
+		background-color: $hoverColor;
+		border-color: rgba(0, 0, 0, .4);
+	}
+
+	&.f-#{$label}:active {
+		background-color: $pressedColor;
+		border-color: transparent;
+	}
+
+	&.f-#{$label}[disabled] {
+		color: adjust-color($baseFontColor, $lightness: 10%);
+		background-color: adjust-color($baseColor, $lightness: 10%);
+		border-color: transparent;
+	}
+}
+
+// -----------------------------------------------
+
+a.c-button, button.c-button {
+    font-size: 15px;
+    touch-action: none; // disable double tap zoom for ios
+    display: inline-block;
+    margin-top: 12px;
+    padding: 9px 12px 10px;
+    background-color: rgba(0, 0, 0, .2);
+    color: #000;
+    line-height: 1;
+    text-align: center;
+    vertical-align: bottom;
+	outline: transparent dashed 1px;
+	border-style: solid;
+	border-color: transparent;
+	border-width: 1px;
+	box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+	min-width: 60px;
+	cursor: pointer;
+
+	&.icon-x-before, &.icon-x-after {
+		padding: 9px 0 10px 0;
+		min-width: 1px;
+	}
+	
+	&.f-compact, &.f-small {
+		min-width: 0px;
+	}
+	&.f-expanded, &.f-flex {
+		max-width: 100%;
+		width: 100%;
+	}
+	
+	&:focus:not(.x-hidden-focus){
+		outline: #000 $focus-outline-style-buttons;
+		text-decoration: underline;
+	}
+	
+	&:active{
+		background-color: rgba(0, 0, 0, .4);
+		border-color: transparent;
+		transform: scale(0.98);
+	}
+	&:hover,&:focus{
+		border-color: rgba(0, 0, 0, .4);
+		background-color: rgba(0, 0, 0, .3);
+	}
+
+	&[disabled]{
+		color: rgba(0, 0, 0, .2);
+		background-color: rgba(0, 0, 0, .2);
+		cursor: not-allowed;
+	}
+	
+	@include button('yellow',#000, #FFB900, #FDD835, #FBC02D);
+	@include button('gray'	,#000, #CCCCCC, #B2B2B2, #999999);
+	@include button('red'	,#FFF, #E81123, #c82333, #bd2130);
+	@include button('blue'	,#FFF, #0067B8, #005da6, #005293);
+	@include button('teal'	,#FFF, #009FD4, #0082AD, #00799E);
+	@include button('purple',#FFF, #5D2E8F, #763AB6, #442268);
+	
+	@include button('orange',#000, #FFA726, #FB8C00 );
+	@include button('green'	,#FFF, #00A611, #218838, #1e7e34);
+}
+
+@media only screen and (min-width:320px) {
+    .c-group a.c-button,
+    .c-group button.c-button {
+        margin-right: 4px;
+    }
+}
+
+@media only screen and (min-width:540px) {
+    .c-group a.c-button,
+    .c-group button.c-button {
+        margin-right: 8px;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  1% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  1% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.c-glyph.c-button{
+	&:after,&:before{
+		vertical-align: middle;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+	&.f-compact{
+		padding-left:0px; padding-right:0px;
+	}
+	&:not(.f-right){
+		padding-left:0px;
+	}
+	&.f-right{
+		padding-right:0px;
+	}
+}
+
+
